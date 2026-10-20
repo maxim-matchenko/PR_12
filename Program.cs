@@ -1,4 +1,4 @@
-﻿// *****************************************************************
+// *****************************************************************
 // Практическая работа №12                                         *
 // Выполнил: Матченко М.С., группа 2-ИСП-оКФ                       *
 // Вариант 3                                                       *
@@ -17,24 +17,24 @@ namespace PR_12
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.OutputEncoding = Encoding.UTF8;
             Console.Clear();
-            string select;
-            string S;
+            string select;// переменная для контроля повторного запуска
+            string str;//строка
             Console.WriteLine("Здравствуйте!");
             do // внешний цикл для повторного запуска 
             {
                 Console.WriteLine("\n--- Новый расчет ---");
-                while (true) // Цикл ввода строки S
+                while (true) // Цикл ввода строки str
                 {
                     try
                     {
                         Console.Write("Введите строку с символами латинского алфавита: ");
-                        S = Console.ReadLine();
+                        str = Console.ReadLine();
 
-                        if (string.IsNullOrWhiteSpace(S))
+                        if (String.IsNullOrWhiteSpace(str))
                         {
                             throw new ArgumentException("Строка не может быть пустой или состоять только из пробелов");
                         }
-                        foreach (char c in S)
+                        foreach (char c in str)
                         {
                             if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')))
                             {
@@ -49,7 +49,7 @@ namespace PR_12
                         Console.WriteLine("Пожалуйста, повторите ввод...\n");
                     }
                 }
-                string result = SwapCase(S);
+                string result = SwapCase(str);
                 Console.WriteLine("Преобразованная строка: " + result);
                 Console.Write("\nХотите выполнить программу еще раз? (да - 1 / нет - любая клавиша): ");
                 select = Console.ReadLine();
