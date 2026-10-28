@@ -49,7 +49,7 @@ namespace PR_12
                         Console.WriteLine("Пожалуйста, повторите ввод...\n");
                     }
                 }
-                string result = SwapCase(str);
+                string result = SwapCase(str);// Вызов функции
                 Console.WriteLine("Преобразованная строка: " + result);
                 Console.Write("\nХотите выполнить программу еще раз? (да - 1 / нет - любая клавиша): ");
                 select = Console.ReadLine();
