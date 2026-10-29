@@ -1,4 +1,4 @@
-﻿// *****************************************************************
+// *****************************************************************
 // Практическая работа №12                                         *
 // Выполнил: Матченко М.С., группа 2-ИСП-оКФ                       *
 // Вариант 3                                                       *
@@ -29,14 +29,13 @@ namespace PR_12
                     {
                         Console.Write("Введите строку с символами латинского алфавита: ");
                         str = Console.ReadLine();
-
                         if (String.IsNullOrWhiteSpace(str))
                         {
                             throw new ArgumentException("Строка не может быть пустой или состоять только из пробелов");
                         }
-                        foreach (char c in str)
+                        foreach (char symbol in str)
                         {
-                            if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')))
+                            if (!((symbol >= 'a' && symbol <= 'z') || (symbol >= 'A' && symbol <= 'Z') || symbol == ' '))
                             {
                                 throw new ArgumentException($"В строке обнаружены недопустимые символы. Разрешены только символы латинского алфавита.");
                             }
@@ -45,7 +44,7 @@ namespace PR_12
                     }
                     catch (Exception ex)
                     {
-                        HandleError(ex);
+                        HandleError(ex);// передача ошибки 
                         Console.WriteLine("Пожалуйста, повторите ввод...\n");
                     }
                 }
